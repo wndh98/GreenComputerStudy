@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 2px solid coral; padding: 5px;
+        }
+        
+        p{padding: 10px;/*border: 1px solid blue;*/}
+
+        p.dotted{border-width:5px; border-style: dotted; border-color: brown;}
+        p.dashed{border-style: dashed;}
+        p.double{border: 3px double red;}
+        p.groove{border-style:groove; border-width: 10px; border-color: yellow;}
+        p.ridge{border-style: ridge; border-width: 10px; border-color: yellow;}
+        p.inset{border-style: inset; border-width: 10px; border-color: yellow;}
+        p.outset{border-style: outset; border-width: 10px; border-color: yellow;}
+        p.none{border-style: none; border-width: 10px;}
+        p.hidden{border-style: hidden; border-width: 10px;}
+        p.inherit{border-style: inherit; border-width: 10px;}
+        /*inherit - 제일가까운걸 물려받는 태그 */
+        p.inherit{border: inherit;} 
+        p.mix{border-style: dotted dashed double solid;
+            border-width: 1px 1px 5px 10px; 
+        border-color: red red red green}
+        /* 4개는 시계방향으로 2개는 상하-좌우 3개는 상 좌우 하 순서임*/
+        p.square{border-style: solid; border-color: red blue;
+        border-width: 25px; }
+        p.left_bar{border-left: 5px solid green;}
+        p.bottom{border-bottom: 5px solid green;}
+        p.button{border: 2px solid green; width: 120px; height:120px; border-radius: 45%; text-align: center;}
+    </style>
+</head>
+<body>
+    <h2>border style property</h2>
+    <div>
+        <p>하나의 프로퍼티에 여러 값을 한번에 적용할 수 있다.</p>
+        <p class="dotted">A dotted border</p>
+        <p class="dashed">A dotted border</p>
+        <p class="double">A dotted border</p>
+        <p class="groove">A dotted border</p>
+        <p class="ridge">A dotted border</p>
+        <p class="inset">A dotted border</p>
+        <p class="outset">A dotted border</p>
+        <p class="none">none border</p>
+        <p class="hidden">A hidden border</p>
+        <p class="inherit">A inherit border</p>
+        <p class="mix">A mixed border</p>
+        <p class="square">g</p>
+        <p class="left_bar">A left_bar border</p>
+        <p class="bottom">A bottom border</p>
+        <p class="button">A botton border</p>
+    </div>
+</body>
+</html>

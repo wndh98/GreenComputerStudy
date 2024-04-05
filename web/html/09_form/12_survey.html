@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         
+            ul{
+            list-style-type: none; margin: 0; padding: 0;
+            overflow: hidden; background-color: #333333;
+        }
+        li{float: left}
+        li a{ display: block; color: white; text-align: center;
+        padding: 16px; text-decoration: none}
+        li a:hover{background-color: #111111}
+         }
+         hr{margin:0px;}
+         h2{margin:0px;}
+         #menu ul{width:100%;text-align:left;padding:0px;margin:0px;}
+         #menu ul li{
+            float: left;
+            width:33%;
+            margin:0px;
+            padding:0px;
+            list-style-type:none;
+            text-align: center;
+         }
+        h2 {
+            padding: 1em;
+            color: white;
+            background-color: gray;
+            clear: left;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header align="center">
+            <h1>선호하는 자동차 설문 조사</h1>
+            <hr>
+        </header>
+        <nav id="menu">
+            <ul>
+                <li><a href="#">자동차 구입</a></li>
+                <li><a href="#">자동차 판매</a></li>
+                <li><a href="#">자동차 시세</a></li>
+            </ul>
+        </nav>
+        <section>
+            <article>
+                <h2> 설문조사 </h2>
+                <form action="">
+                    <fieldset>
+                        <legend>타고싶은 자동차 설문 조사</legend>
+                        <label for="name">이름:</label>
+                        <input type="text" name="name" value="" id="name">
+                        <label for="age">나이</label>
+                        <input type="text" name="age" value="" id="age">
+                        <hr>
+                        <h3>현재 자동차 소유 여부</h3>
+                        <input type="radio" name="now" value="국산차" id="a">
+                        <label for="a">국산차</label>
+                        <input type="radio" name="now" value="외제차" id="a1">
+                        <label for="a1">외제차</label>
+                        <input type="radio" name="now" value="소유하지않음" id="a2">
+                        <label for="a2">소유하지않음</label>
+                        <hr>
+                        <h3> 선호하는 자동차 </h3>
+                        <input type="checkbox" name="like" value="KIA" id="KIA">
+                        <label for="KIA">KIA</label>
+                        <input type="checkbox" name="like" value="HTUNDIA" id="HYUNDAI">
+                        <label for="HYUNDAI">HYUNDAI</label>
+                        <input type="checkbox" name="like" value="BMW" id="BMW">
+                        <label for="BMW">BMW</label>
+                        <input type="checkbox" name="like" value="BENZ" id="BENZ">
+                        <label for="BENZ">BENZ</label>
+                        <hr>
+                        <label for="date">예약가능한 날짜</label>
+                        <input type="datetime-local" name="datetime" id="date">
+                        <hr>
+                        <label for="talk">메모</label> <button type="button" onclick="alert(111111111111)" >담당자 연락처</button><br>
+                        <textarea name="talk" id="talk" cols="50" rows="30" placeholder="메모칸"></textarea>
+                        
+
+
+                    </fieldset>
+
+
+                    <input type="submit"> <input type="reset">
+
+                </form>
+            </article>
+        </section>
+
+
+        </form>
+        <footer align="center">Copyright &copy; https://www.kcar.com/</footer>
+    </div>
+
+</body>
+
+</html>

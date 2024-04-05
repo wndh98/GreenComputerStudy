@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            max-width: 100%;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 2px solid #eee;
+            background-color: transparent;
+            font-size: 16px;
+            transition: border-bottom-color 0.3s;
+        }
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus {
+            border-bottom-color: #4CAF50;
+            outline: none;
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .login-container input[type="submit"]:focus {
+            outline: none;
+        }
+        .login-container .forgot-password {
+            text-align: right;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .login-container .forgot-password a {
+            color: #777;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>로그인</h2>
+        <form action="#" method="post">
+            <input type="text" name="username" placeholder="사용자명" required>
+            <input type="password" name="password" placeholder="비밀번호" required>
+            <input type="submit" value="로그인">
+        </form>
+        <div class="forgot-password">
+            <a href="#">비밀번호를 잊으셨나요?</a>
+        </div>
+    </div>
+</body>
+</html>

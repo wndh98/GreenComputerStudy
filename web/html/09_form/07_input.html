@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>다양한 형태의 input tag:</h2>
+    <!-- maxlength="10" 글자수 10개 제한 -->
+    <!-- hidden = 데이터를 전송받는데 보이지 않게 함 -->
+    <!-- readonly = 입력 X 읽기전용  -->
+    <!-- disabled 서버에 전송 X 입력 X (사용자가 참고용) -->
+    <!-- required 입력란을 작성하세요 작성안하면 전송 X -->
+    <!-- number 에서 min= 최소값 max=최댓값 step=2 짝수 -->
+    <form action="">
+        text: <input type="text" name="a"value="hong"maxlength="10" size="15"><br>
+        text: <input type="text" name="a"value="hong"maxlength="10" size="15" hidden><br>
+        text: <input type="text" name="a"value="hong"maxlength="10" size="15" readonly><br>
+        text: <input type="text" name="a"value="hong"maxlength="10" size="15" disabled><br>
+        password: <input type="password"name="password" required><br>
+        radio: <input type="radio" name="job" value="singer" checked>singer<br>
+        checkbox: <input type="checkbox" name="job" value="singer" checked>singer<br>
+        number: <input type="number" name="age" min="8" max="10" step="2"><br>
+        email: <input type="email" name="email"><br>
+        color: <input type="color" name="c1"><br>
+        tel: <input type="tel"name="phone"><br>
+        time: <input type="time"name="time"><br>
+        date: <input type="date"name="date" min="2019-01-01" max="2019-01-02"><br>
+        datetime: <input type="datetime-local"name="datetime"><br>
+        file: <input type="file"name="file"><br>
+        search: <input type="search"name="search"><br>
+        range:0<input type="range"name="price" min="0"max="100" step="10">100<br>
+        <!-- button 그냥 쓰면 정보가 전송됨 아래처럼 type 꼭 써주기 -->
+        button: <button type="button" onclick="alert(123123)"> </button>
+        button: <input type="button" onclick="location.href='https://www.daum.net'" value="213123"> 
+        
+        <hr>
+        <input type="submit" value="보냄"><input type="reset" >
+    </form>
+</body>
+
+</html>
