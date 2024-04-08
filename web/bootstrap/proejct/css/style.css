@@ -1,0 +1,25 @@
+
+nav{font-family: Montserrat, sans-serif; height:50px !important;background-color: #2d2d30 !important;}
+
+nav a{color:#fff !important}
+.logo{font-size:18px !important;text-decoration: none;}
+.dropdown-item:hover{background-color: red;color:white;}
+.slider_btn{
+width: 10px !important;
+height: 10px !important;
+margin: 1px !important;
+}
+#section2 h2{
+    font-size: 20px !important;
+    color: #111 !important;
+    letter-spacing: 10px !important;
+}
+#section2 h3{
+    font: 400 15px / 1.8 Lato, sans-serif !important;
+    color: #777 !important;
+}
+#section2 p{
+    font: 400 15px / 1.8 Lato, sans-serif !important;
+    color: #777 !important;
+}
+p{word-wrap: break-word;}
