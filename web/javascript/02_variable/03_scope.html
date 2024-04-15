@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>변수의 scope</h2>
+    <p>변수를 이용할 수 있는 범위</p>
+    <p>es6(2015) 이전에는 자바스크립트에 블록 스코프가 없었음 (블록 내부에서 선언한 변수가 바깥에서도 접근 가능했다)</p>
+    <p>블록스코프(local 변수)바깥스코프(global : 전역 변수)</p>
+    <p>let, const는 블록스코프 있음</p>
+    <p>let, const는 다시 선언할 수 없다</p>
+    <p>let, const는 사용하기 전에 반드시 선언해야 한다.</p>
+    <p>let, const는 this와 bind할 수 없다.</p>
+    <p>let, const는 hoist 기능 사용 불가.</p>
+    <script>
+        
+        let c=33;
+        console.log(c);
+        
+    </script>
+    <script>
+        // a처럼 페이지 어디에서나 사용가능한 변수 - 전역변수
+        let a = 11;
+        console.log(a);
+        if(true){
+            let a=2;
+            console.log(a);
+            console.log();
+            //블록 안에서 선언 및 초기화
+            var b=3;
+            // console.log(b);
+            //블록 바깥에서 c를 선언하여 사용하고 있지만 블록 내부에서 선헌한 c는 완전히 다른 변수임
+            let c=55;
+            // console.log(c);
+            let d= 77;
+            // console.log(d);
+        }
+        console.log(a);
+        // console.log(d);
+        // console.log(b);
+        
+        //const - 상수(변하지 않는값)
+        const PI = 3.141592;
+        console.log(PI);
+        // PI=3.14;
+
+
+    </script>
+    <script>
+        // console.log(d);
+    </script>
+</body>
+</html>

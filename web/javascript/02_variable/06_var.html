@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body h1{}
+    </style>
+</head>
+<body>
+    <h1>입력창 3개</h1>
+    <input type="text" name="test1" id="test1" value="2"><br>
+    <input type="text" name="test2" id="test2" value="3"><br>
+    <input type="text" name="test3" id="test3" readonly value="1">
+    <button onclick="calculate('plus')">+</button>
+    <button onclick="calculate('minus')">-</button>
+    <button onclick="calculate('multiply')">*</button>
+    <button onclick="calculate('devide')">/</button>
+
+    <script>
+        const inputNum1=document.getElementById("test1");
+        const inputNum2=document.getElementById("test2");
+        const inputResult=document.getElementById("test3");
+        // 안되는 이유 value 값 그자체를 가져왔기 때문에 test3과는 아무 연관이 없음
+        let inputResultValue=document.getElementById("test3").value;
+        inputResultValue=5;
+        function calculate(sign){
+            let num1=inputNum1.value * 1;
+            let num2=inputNum2.value * 1;
+            
+            if(sign=="plus"){
+                inputResult.value=num1 + num2;
+            }else if(sign=="minus"){
+                inputResult.value= num1 - num2;
+            }else if(sign=="multiply"){
+                inputResult.value= num1 * num2;
+            }else if(sign=="devide"){
+                inputResult.value= num1 / num2;
+            }
+        }
+
+    </script>
+</body>
+</html>

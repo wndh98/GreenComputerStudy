@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>연산자</h1>
+    <p>사칙연산 : +,-,*,/</p>
+    <!-- 기본 왼쪽에서 오른쪽 우선순위가 다를시 우선순위 우선인것 부터 -->
+    <script>
+        let a=35,b=20;
+        console.log(a+b);
+        console.log(a-b);
+        console.log(a*b);
+        console.log(a/b);
+        console.log(a%b);
+
+        console.log("-----------------------");
+
+        console.log(a>b);
+        console.log(a<b);
+        console.log(a>=b);
+        console.log(a<=b);
+        console.log(a==b);
+        console.log(a!=b);
+        console.log("-----------------------");
+        // a가 5와 7의 공배수인가? 그리고(and) => &&
+        console.log(a % 5 == 0 && a % 7 == 0);
+        // b가 5와 7의 공배수인가? 그리고(and) => &&
+        console.log(b % 5 == 0 && b % 7 == 0);
+        // true && true => true
+        // true && false => false
+        // false && true => false
+        // false && false => false
+        // && >>> 그냥 전부 다 맞아야지 true 아니면 false
+
+        // a가 5 혹은 7의 공배수인가? 혹은(or) => ||
+        console.log(a % 5 == 0 || a % 7 == 0);
+        // b가 5 혹은 7의 공배수인가? 혹은(or) => ||
+        console.log(b % 5 == 0 || b % 7 == 0);
+        // true || true => true
+        // true || false => true
+        // false || true => true
+        // false || false => false 
+
+        console.log("-----------------------");
+        console.log(a++);//35
+        console.log(a--);//36
+        console.log(++a);//36
+        console.log(--a);//35
+        
+        let c= a++ + ++b; //56
+        console.log("-----------------------");
+        a=35;
+        b=20;
+        console.log(a+=5);
+        console.log(a-=5);
+        console.log(a*=5);
+        console.log(a/=5);
+        console.log(a%=5);
+        console.log("-----------------------");
+        a=36;
+        b=21;
+        console.log(a==b);
+        console.log(a===b);
+        console.log(a!=b);
+        console.log(a!==b);
+        a=7,b="7";
+        console.log("-----------------------");
+        console.log(a==b);
+        console.log(a!=b);
+        console.log(a===b);
+        console.log(a!==b);
+        console.log("-----------------------");
+        console.log(true);
+        console.log(!true);
+        console.log(!false);
+        let age=17;
+        if(!(age > 17)){
+            alert("go home!!!");
+        }
+    </script>
+</body>
+
+</html>

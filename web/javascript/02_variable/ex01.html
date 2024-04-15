@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>변수 연습</h1>
+    <p id="myCar"></p>
+    <script>
+        
+        // 변수 a 선언
+        let a;
+        // 변수 a에 7로 초기화
+        a = 7;
+        // 변수 b를 선언 & 9로 초기화
+        let b = 9;
+        
+        let c = a + b;
+        
+        console.log("c = " + c);
+
+        let car = "레이";
+
+        let owner = "김주오";
+
+        console.log(owner + " : " + car);
+
+        
+        document.write("<p>"+ owner + "의 차는 " + car + "입니다.</p>");
+
+        const targetP=document.getElementById("myCar");
+        targetP.textContent=owner + "의 차는 " + car + "입니다.";
+        </script>
+</body>
+</html>
