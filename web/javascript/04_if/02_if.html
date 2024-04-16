@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>if - 조건문</h1>
+    <h3>
+        현재 시간은 <span id="hour"></span>시
+        <span id="min"></span>분 입니다.
+        <p id="greeting"></p>
+    </h3>
+
+    <script>
+        const hour = document.getElementById("hour");
+        const min = document.getElementById("min");
+        const greeting = document.getElementById("greeting");
+        let today =new Date();
+        //Date 클래스의 생성자를 실행하여 문자열을 반환받아 today 변수에 저장
+        hour.innerText=today.getHours();
+        min.innerText=today.getMinutes();
+        if(today.getHours() * 1>18){
+            greeting.innerText="좋은저녁";
+        }else if(today.getHours() * 1 >= 10){
+            greeting.innerText="좋은점심";
+        }else{
+            greeting.innerText="좋은아침";
+        }
+        
+        // if(today.getHours() * 1 >= 6 && today.getHours() * 1< 12){
+        //     greeting.innerText="좋은아침";
+        // }else if(today.getHours() * 1 >= 12 && today.getHours() * 1<18){
+        //     greeting.innerText="좋은점심";
+        // }else{
+        //     greeting.innerText="좋은저녁";
+        // }
+        
+    </script>
+</body>
+</html>

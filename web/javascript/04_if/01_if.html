@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>if- 조건문</h1>
+    <pre>
+        //if 문: 조건에 따라 실행 방향을 결정
+        /* if(판별식, 값){
+            실행문;
+        }else if(판별식, 값){
+            실행문;
+        }else{
+            실행문;
+        } */
+    </pre>
+    <h3>당신은 <span id="age">~~</span>세이므로 <span id="drink">~~</span>를 마시셈 ㅋㅋㅋ</h3>
+
+    <script>
+        // 18 이상 - 소주 , 15 ~ 18 - 커피 , 15 미만 - 우유
+        let n1 = prompt("age>>>",19);
+        
+        const age = document.getElementById("age");
+        const drink = document.getElementById("drink");
+        age.innerText=n1;
+        if(n1>25){
+            drink.innerText="솔의눈";
+        }else if(n1>20){
+            drink.innerText="데자와";
+        }else{
+            drink.innerText="실론티";
+        }
+        
+    </script>
+
+</body>
+</html>

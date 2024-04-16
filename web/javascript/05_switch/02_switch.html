@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>오늘은 <span id="yoil"></span>요일입니다.</h2>
+    <script>
+        const yoilSpan = document.getElementById("yoil");
+        let week =new Date();
+        switch(week.getDay()){
+            case 0:
+                yoilSpan.innerText="일";
+                break;
+            case 1:
+                yoilSpan.innerText="월";
+                break;
+            case 2:
+                yoilSpan.innerText="화";
+                break;
+            case 3:
+                yoilSpan.innerText="수";
+                break;
+            case 4:
+                yoilSpan.innerText="목";
+                break;
+            case 5:
+                yoilSpan.innerText="금";
+                break;
+            case 6:
+                yoilSpan.innerText="토";
+                break;
+            default:
+                break;
+        }
+        
+        
+    </script>
+</body>
+</html>
