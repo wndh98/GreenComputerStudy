@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>자바 스크립트의 자료형</h1>
+    <ul>
+        <li>string</li>
+        <li>number(정수(integer),소수(float))</li>
+        <li>boolean</li>
+        <li>object</li>
+        <li>function</li>
+    </ul>
+    <p>상세 설명</p>
+    <ul>
+        <li>number(정수, 소수형): 10, 012, 0xa</li>
+        <li>string(문자형): "햄릿은 '사느냐 죽느냐 그것이 문제로다'라고 말했지요"</li>
+        <li>boolean(논리형): true, false</li>
+        <li>object(json): javascript object notation => {"name": "kim", "age": 27}</li>
+
+    </ul>
+    <p>6가지 object 타입이 있다</p>
+    <ul>
+        <li>Object</li>
+        <li>Date</li>
+        <li>Array</li>
+        <li>String</li>
+        <li>Number</li>
+        <li>Boolean</li>
+    </ul>
+    <p>값을 가질 수 없는 데이터 타입 2가지</p>
+    <ul>
+        <li>null => 0도 아니고 undefined도 아닌 상태. 즉 초기화 되었으나 값이 없는 상태</li>
+        <li>undefined: 선언되었으나 초기화되지 않은 상태</li>
+    </ul>
+    <h2>typeof : 데이터 타입을 확인하기 위해서 사용하는 연산자</h2>
+    <p id="type"></p>
+    <h2>Type Conversion(타입 변환)</h2>
+    <ul>
+        <li>Number => String: String(number), number.toString()</li>
+        <li>Boolean => String: String(boolean), boolean.toString()</li>
+        <li>Date => String: String(date), date.toString()</li>
+        <li>String => Number: Number(string), parseInt(string), parseFloat(string)</li>
+    </ul>
+    <script>
+        let a = 7;
+        let b = 3.14;
+        let c = 0o12; // 8진수
+        let d = 0xa; //16진수
+        let e = 3.141592e+4; //4자리밀기
+        console.log(a + ", " + b+ ", " +c+ ", " +d+ ", " +e);
+        let f="햄릿";
+        let j={"name" : "kim" , "age" : 7};
+        console.log(j);
+        console.log("j" + j);
+        console.log("j", j);
+
+        let requestURL="https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+        let request=new XMLHttpRequest();
+        let superHeroes;
+        request.open("GET",requestURL);
+        request.responseType="json";
+        request.send();
+        request.onload = function () {
+            superHeroes = request.response;
+        }
+        
+    </script>
+</body>
+
+</html>

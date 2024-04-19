@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>for in, for of</h1>
+
+    <script>
+        const lastName = ["kim", "lee", "park"];
+
+        for (let i = 0; i < lastName.length; i++) {
+            document.write(`${lastName[i]} `);
+        }
+        lastName.forEach((value, index) => {
+            console.log(`${index} 번째 이름 ${value}`);
+        });
+        // array 요소의 인덱스(키)를 순서대로 뽑아줌
+        for (let idx in lastName) {
+            console.log(`${idx}`);
+        }
+        // array 요소의 데이터(value)를 순서대로 뽑아줌
+        //iterable: array, string, map, nodelists etc에만 사용 가능
+        for (let value of lastName) {
+            console.log(`${value}`);
+        }
+        let love="love";
+        for (let idx in love) {
+            console.log(`${idx}`);
+        }
+        for (let value of love) {
+            console.log(`${value}`);
+        }
+
+        // object 출력
+        let myFriend ={fName:"JuOh",lName:"Kim",age:26};
+        for(let key in myFriend){
+            console.log(`${myFriend[key]}`);
+        }
+        // 불가능 iterable 아님 for of - object 에 사용 불가
+        // for(let value of myFriend){
+        //     console.log(`${value}`);
+        // }
+
+        let lunch = "wow, 이제 점심 시간이 되었군 ㅋㅋㅋ";
+        for(let char of lunch){
+            console.log(char);
+        }
+        
+
+    </script>
+</body>
+
+</html>
