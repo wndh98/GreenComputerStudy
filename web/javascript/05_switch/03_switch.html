@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><a href="#none" id="link">어디로 갈까?</a></h1>
+
+    <script>
+        const link=document.getElementById("link");
+        let rand = parseInt(Math.random()*100) +1;
+        console.log(rand);
+        switch(rand%2){
+            case 0 :
+                link.setAttribute("href","https://www.naver.com");
+                break;
+            case 1 :
+                link.setAttribute("href","https://www.daum.net");
+                break;
+        }
+    </script>
+</body>
+</html>

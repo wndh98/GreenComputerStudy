@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let casinoDice,myDice,casinoMoney=1000,myMoney=100,count=0;
+        while(true){
+            count++;
+            console.log(casinoMoney + " : " + myMoney);
+            casinoDice=parseInt(Math.random()*6)+1;
+            myDice=parseInt(Math.random()*6)+1;
+            
+            console.log(`${casinoDice} | ${myDice}`);
+            
+            if(casinoDice>myDice){
+                casinoMoney+=20;
+                myMoney-=20;
+            }else if(casinoDice<myDice){
+                casinoMoney-=20;
+                myMoney+=20;  
+            }else{
+                continue;
+            }
+            console.log("------------------------");
+            console.log(casinoMoney + " : " + myMoney);
+            if(casinoMoney<=0 || myMoney<=0){break;}
+        }
+        console.log(count);
+    </script>
+</body>
+</html>

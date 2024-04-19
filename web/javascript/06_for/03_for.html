@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>구구단</h1>
+    <script>
+        for(let i=1;i<=9;i++){
+            for(let j=2;j<=9;j++){
+                document.write(j + "x" + i + "=" + i*j + " ");
+            }
+            document.write("<br>");
+        }
+        // html css bootstrap
+        // javascript vue.js
+        
+    </script>
+    <h3>구구단<span id="dan"></span>단</h3>
+    <div id="gugu"></div>
+    <script>
+        // id 가 단인 엘리먼트를 dan에 저장
+        const danTarget=document.getElementById("dan");
+        // id 가 단인 엘리먼트를 혀혀에 저장
+        const guguTarget=document.getElementById("gugu");
+        let num=prompt("")*1;
+        
+        let result="";
+        
+        if(num>=2 && num<=9){
+            danTarget.innerText=num;
+            for(let i=1;i<10;i++){
+                
+                result+=num + "x" + i + "=" + num*i + "<br>";
+                console.log(result);
+            }
+            guguTarget.innerHTML=result;
+        }else{
+            guguTarget.innerHTML="제대로 넣으세요";
+        }
+        
+    </script>
+</body>
+</html>

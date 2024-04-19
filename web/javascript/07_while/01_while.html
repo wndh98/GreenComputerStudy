@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>while</h1>
+
+    <pre>
+        while(판별식, 값){
+            실행문
+            while문을 벗어나기 위한 조건
+        }
+
+        do{
+            실행문
+            while문을 벗어나기 위한 조건
+        }while(판별식, 값)
+    </pre>
+    <script>
+        // for 문은 30연 가차 뽑기할때 >> 횟수가 정해져있음
+        // while 은 원하는 캐릭터 뽑을때까지 자동으로 계속 뽑을때
+        // 가챠게임 해보셨어요?
+
+        // let i=0;
+        // while(true){
+        //     console.log(i);
+        //     if(i==100){break;}
+        //     i++;
+        // }
+/*         let num = parseInt(prompt());
+        if (num < 2 || num > 9 || isNan(num)) {
+            alert("2-9");
+        } else {
+            for (let i = 2; i <= 9; i++) {
+                console.log(`${num} * ${i} = ${num * i}`);
+            }
+        } */
+        let num=0;
+        do{
+
+                num = parseInt(prompt());
+                for (let i = 2; i <= 9; i++) {
+                    console.log(`${num} * ${i} = ${num * i}`);
+                }
+            
+
+        }while(num < 2 || num > 9 || isNan(num))
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>for</h1>
+    <h3>1~100 까지의 합을 구하시오</h3>
+    <p id="ans1"></p>
+    <h3>1~100 까지의 곱을 구하시오</h3>
+    <p id="ans2"></p>
+    <h3>1~100 까지의 짝수합을 구하시오</h3>
+    <p id="ans3"></p>
+    <script>
+        const answerTarget=document.getElementById("ans1");
+        const answer2Target=document.getElementById("ans2");
+        const answer3Target=document.getElementById("ans3");
+        let sum=0;
+
+        for(let i=1;i<=100;i++){
+            sum+=i;
+            // console.log(sum);
+        }
+        answerTarget.innerText=sum;
+        let sum2=1;
+        for(let i=1;i<=10;i++){
+            sum2*=i;
+            // console.log(sum);
+        }
+        answer2Target.innerText=sum2;
+        let sum3=0;
+        for(let i=1;i<=100;i++){
+            if(i%2==0){
+                sum3+=i;
+            }
+            // console.log(sum);
+        }
+        answer3Target.innerText=sum3;
+    </script>
+</body>
+</html>

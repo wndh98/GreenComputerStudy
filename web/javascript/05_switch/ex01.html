@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x=prompt() *1;
+        
+        switch(x){
+            case 3 : case 4 : case 5:
+                console.log("봄");
+                break;
+            case 6 : case 7 : case 8:
+                console.log("여름");
+                switch(x){
+                    case 7 :
+                        console.log("한여름");
+                        break;
+                    case 8 :
+                        console.log("미친여름");
+                        break;
+                }
+                break;
+            case 9 : case 10 : case 11:
+                console.log("가을");
+                break;
+            case 12 : case 1 : case 2:
+                console.log("겨울");
+                break;
+        }  
+        // switch(x){
+        //     case 3,4,5:
+        //         console.log("봄");
+        //         break;
+        //     case 6,7,8:
+        //         console.log("여름");
+        //         break;
+        //     case 9,10,11:
+        //         console.log("가을");
+        //         break;
+        //     case 12,1,2:
+        //         console.log("겨울");
+        //         break;
+        // }
+        // if(x>=3 && x<=5){
+        //     console.log("봄");
+        // }else if(x>=6 && x<=8){
+        //     console.log("여름");
+        // }else if(x>=6 && x<=8){
+        //     console.log("가을");
+        // }else{
+        //     console.log("겨울");
+        // }
+    </script>
+</body>
+</html>

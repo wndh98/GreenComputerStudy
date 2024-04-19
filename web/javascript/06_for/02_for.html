@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // for(let i=0;i<5;i++){
+        //     for(let j=0;j<5;j++){
+        //         document.write("*");
+        //     }
+        //     document.write("<br>");
+        // }
+
+
+        // for(let i = 0; i < 5; i++){
+        //     console.log(i);
+        //     for(let j = 0; j < i + 1; j++){
+        //         console.log(j);
+        //         document.write("*");
+        //     }
+        //     document.write("<br>");
+        // }
+        for(let i = 0; i < 5; i++){
+            console.log(i);
+            for(let j = 0; j < 4-i; j++){
+                console.log(j);
+                document.write("&nbsp;");
+            }
+            for(let k = 0; k < i + 1; k++){
+                console.log(k);
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
