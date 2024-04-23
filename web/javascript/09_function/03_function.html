@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let str="우리는 친구 만나면 반가운 친구";
+        let words = str.split(" ");
+        for(let idx in words){
+            document.write("<p>" + idx + " : " + words[idx] + " 배고파 ");
+        }
+        document.write("<br>");
+        let new_str = words.join("_");
+        document.write(new_str);
+
+        let f="  친구 ";
+        document.write("<p>" + str.includes(f.trim()) + "</p>");
+
+        var sentence = 'The quick brown fox jumped Over The Lazy Dog.';
+        let word="lion";
+        document.write(`<p>${word} 는 ${sentence} 안에 ${sentence.includes(word)?"있다" : "없다"} </p>`);
+
+        //match() - regexp와 매칭되는 어구 반환
+        let regex= /[A-Z]/g;
+        let find = sentence.match(regex);
+        console.log(find);
+        //search() - regexp 와 매칭되는 어구의 첫 인덱스 반환
+        let regex2= /[^\w\s]/g;
+        console.log(sentence.search(regex2));
+        console.log(sentence[44]);
+        console.log(sentence.length);
+        console.log(sentence.substr(sentence.length-4,3));
+        if(sentence.startsWith('The')){
+            console.log(1);
+        }else{
+            console.log(2);
+        }
+        
+        if(sentence.endsWith('Dog.')){
+            console.log(1);
+        }else{
+            console.log(2);
+        }
+        
+    </script>
+</body>
+</html>

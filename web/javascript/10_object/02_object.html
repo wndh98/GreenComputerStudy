@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // object 생성을 위한 틀 -class
+        // 함수
+        function Person(firstName, lastName, id) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.id = id;
+            function test(){//이건 안됨
+                console.log(1);
+            }
+            this.fullname=function(){
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        let mary=new Person("jane","mary",2345);
+        let tom=new Person("mogly","tom",1345);
+        console.log(mary);
+
+        console.log(mary.fullname());
+
+        let steve={firstName:'jobs',lastName:'steve',id:7777};
+        console.log(steve);
+        const friends = [mary,tom,steve];
+        for(let idx in friends){
+            console.log(friends[idx]);
+        }
+    </script>
+</body>
+
+</html>

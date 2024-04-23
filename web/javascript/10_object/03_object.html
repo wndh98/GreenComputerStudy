@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Student(name, age, school) {
+            this.name = name;
+            this.age = age;
+            this.school = school;
+
+            this.study = function (subject) {
+                console.log(`${this.name} ${subject} 공부중`);
+            }
+
+        }
+        let kim = new Student("kimjuoh", 26, "greenComputer");
+        kim.study("프로그래밍");
+        let s1 = new Student("",1,"");
+        let s2 = new Student("",1,"");
+        let s3 = new Student("",1,"");
+        let s4 = { name: 'gg', age: 99, school: 'wkwkw' };
+        console.log(s1);
+        console.log(s2);
+        console.log(s3);
+        console.log(s4);
+        console.log("국어");
+
+
+
+        class Person{
+            constructor(name, id){
+                this.name = name;
+                this.id = id;
+                function test(){//이건 안됨
+                    console.log(1);
+                }
+            }
+            fullname(){
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        //object 찍어내기 위한 function -> class
+        class StudentClass extends Person{
+            constructor( age, school){
+                super(name);
+                this.age = age;
+                this.school = school;
+            }
+            study(subject){
+                console.log(`${this.name} ${subject} 공부중`);
+            }
+            
+        }
+        let stest=new StudentClass("1","2",3,"4",5,"6");
+        stest.study("test");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>form validation</h1>
+    <h2>로그인</h2>
+    <form action="" method="get" name="frm" onsubmit="return formCheck();">
+        id <input type="text" id="id" name="id"><br>
+        pw <input type="text" id="password" name="password"><br>
+        <input type="submit" value="로그인">
+        <!-- <button type="button" onclick="formCheck();">로그인</button> -->
+    </form>
+    <form action="" method="post" name="frm2">
+    </form>
+    <script>
+        const form = document.frm;
+        const idInput = form.id;
+        const pwInput = form.password;
+        function formCheck() {
+            if(idInput.value == "" || idInput.value==null){
+                alert("아이디를 입력해 주세요.");
+                idInput.focus();
+                return false;
+            }
+            if(pwInput.value == "" || pwInput.value==null){
+                alert("비밀번호를 입력해 주세요.");
+                pwInput.focus();
+                return false;
+            }
+            return true;
+            //form.submit();
+        }
+        
+        
+    </script>
+</body>
+
+</html>

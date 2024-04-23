@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="loginForm" action="http://localhost/login" method="post">
+        계정 : <input type="text" name="userId"><br>
+        비밀번호 : <input type="password" name="password"><br>
+        <input type="hidden" name="loginType" value="admin">
+        <input type="button" onclick="login()" value="로그인">
+    </form>
+    <script>
+        //id 따로 password 따로, password 8~12자 제한, 문제 있을 때 제출하지 않고 해당 위치에 커서 넣기 
+        const form=document.loginForm;
+        const idInput=form.userId;
+        const pwInput=form.password;
+
+        function login(){
+            if(idInput.value=="" || idInput.value==null){
+                alert("아이디입력");
+                idInput.focus();
+                return false;
+            }
+            if(pwInput.value=="" || pwInput.value==null){
+                alert("비밀번호 입력");
+                pwInput.focus();
+                return false;
+            }else if(pwInput.value.length<8 || pwInput.value.length>12){
+                alert("비밀번호를 8~12글자 내로 입력해주세요");
+                pwInput.focus();
+                return false;
+            }
+            
+            
+            form.submit();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(navigator);
+        window.onload = function () {
+            // alert(1);
+            let cookie = document.getElementById("cookie");
+            console.log(cookie);
+            console.log(navigator);
+            let txt = "";
+            if (navigator.cookieEnabled){
+                txt ="쿠키사용가능";
+            }else{
+                txt="쿠키사용불가능";
+            }
+            console.log(txt);
+            
+        }
+    </script>
+</head>
+
+<body>
+    <h1>onload</h1>
+    <p id="cookie"></p>
+</body>
+
+</html>

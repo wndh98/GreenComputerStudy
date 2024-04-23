@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>1보다 크고 10보다 작은 숫자를 입력하시오</p>
+    <input type="text" id="num">
+
+    <button type="button" onclick="check()">입력값 검증</button>
+
+    <div id="msg"></div>
+    <script>
+        const numInput=document.getElementById("num");
+        function check(){
+            if(numInput.value==""){
+                alert("write");
+                numInput.focus();
+                return
+            }
+            if(isNaN(numInput.value)){
+                alert("숫자만 입력");
+                numInput.value="";
+                numInput.focus();
+                return
+            }
+            
+            if(numInput.value * 1 >1 && numInput.value * 1 <10){
+                document.getElementById("msg").innerText="합격";
+            }else{
+                document.getElementById("msg").innerText="불합격";
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Person(name, age, gender) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.gender = gender;
+        // }
+        class Person {
+            constructor(name, age, gender) {
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+            }
+        }
+
+        let p1 = new Person("tom", 33, "m");
+        let p2 = new Person("jane", 43, "f");
+        const person = [p1, p2];
+
+        for (let i in person) {
+            for (let j in person[i]) {
+                console.log(`${j} : ${person[i][j]}`);
+            }
+        }
+        p2.height = 200;
+        Person.prototype.height = 173;
+        let p3 = new Person("sam", 31, "m");
+        console.log(p3);
+
+        // object에 함수 추가
+        Person.prototype.lunch = function () {
+            if (this.gender == "m") {
+                console.log("제육");
+            } else {
+                console.log("떡볶이");
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

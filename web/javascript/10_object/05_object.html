@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* function friend(name, age, pet){
+            this.name = name;
+            this.age = age;
+            this.pet = pet;
+        } */
+        var p1 = {
+            "name": "tom",
+            "age": 33,
+            "pet": [
+                { "kind": "dog", "name": ["thunder", "sky", "merry"] },
+                { "kind": "cat", "name": ["sally", "terry", "molly"] },
+                { "kind": "bird", "name": ["gori", "pori"] }
+            ]
+        };
+        let x = "<h1>" + p1.name + "</h1>";
+        for (let i in p1.pet) {
+            
+            for (let k in p1.pet[i]) {
+                if (k == "name") {
+                    x += `<h2>${k}</h2>`;
+                    for (let l in p1.pet[i][k]) {
+                        x += `<h3>${p1.pet[i][k][l]}</h2>`;
+                    }
+                } else {
+                    x += `<h2>${k} : ${p1.pet[i][k]}</h2>`;
+                }
+            }
+        }
+
+        document.write(x);
+
+    </script>
+</body>
+
+</html>

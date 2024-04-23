@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Date()</h1>
+    <p>Date() : 일시와 관련된 값과 함수들을 포함하는 클래스(객체)</p>
+    <div id="now"></div>
+    <script>
+        //클래스 생성자 실행 - 현재 일시를 문자열로 반환
+        const nowDiv=document.getElementById("now");
+        let date=new Date();
+        nowDiv.innerText=Date();
+        // console.log(date.getFullYear());
+        
+        // 특정 일시를 가진 Date 객체 생성
+            // let md = new Date(1919,02,01,09,00);
+            // console.log(md);
+            // console.log(md.getTime());
+            let date2=new Date(1000000000000000);
+            console.log(date2);
+            // 
+    </script>  
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>파일 업로드</h1>
+    <form action="">
+        <input type="file" name="" id="file"  onchange="previewFile()">
+        <hr>
+        <img src="" alt="" id="imgBox">
+    </form>
+    <script>
+        const imgBox=document.getElementById("imgBox");
+        function previewFile(){
+            let file = document.querySelector("input[type=file]").files[0];
+            let reader=new FileReader();
+            reader.addEventListener("load", function () {
+                imgBox.src = reader.result;
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
