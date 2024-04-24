@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../../images/0out.jpg" alt="" onmouseover="over(0)" onmouseout="out(0)">
+    <img src="../../images/1out.jpg" alt="" onmouseover="over(1)" onmouseout="out(1)">
+    <img src="../../images/2out.jpg" alt="" onmouseover="over(2)" onmouseout="out(2)">
+    <img src="../../images/3out.jpg" alt="" onmouseover="over(3)" onmouseout="out(3)">
+    <script>
+        let overImg = [];
+        let outImg = new Array();
+        let path = "/web/images/";
+        let extension = ".jpg";
+        const imgArr = document.querySelectorAll("img");
+        for (let i = 0; i < 4; i++) {
+            overImg[i] = path + i + "over" + extension;
+            outImg[i] = path + i + "out" + extension;
+        }
+
+        function over(num) {
+            imgArr[num].src = overImg[num];
+        }
+        function out(num) {
+            imgArr[num].src = outImg[num];
+        }
+    </script>
+</body>
+
+</html>

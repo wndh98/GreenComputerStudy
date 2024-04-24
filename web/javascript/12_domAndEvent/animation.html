@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            position: relative;
+        }
+
+        #box {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(255, 0, 0);
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px;
+            width: 97px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation</h1>
+    <div id="container">
+        <div id="box"></div>
+    </div>
+    <button onclick="move()" id="move">move</button>
+    <button onclick="stop()" id="stop">stop</button>
+    <script>
+        let position_x=0,position_y=0,time;
+        let box=document.getElementById("box");
+        let moveBtn=document.getElementById("move");
+        let stopBtn=document.getElementById("stop");
+        let direction;
+        
+        // parseInt(Math.random()*8) +1
+
+        // 1~8
+        // box 좌표 top left 둘중 하나가 150 이상이거나 0밑이면 다음 랜덤
+        function move(){
+            moveBtn.disabled=true;
+            direction = parseInt(Math.random()*8) +1;
+            time=setInterval(randomMove,1);
+        }
+
+        function randomMove(){
+        //    x 좌표랑 y좌표가 둘다 150 밑이여야지만 움직일수 있게 해준다
+        // console.log(position_x);
+        // console.log(position_y);
+        
+            if(position_x<150 && position_y < 150 && position_x>0 && position_y>0){
+                if(direction==1){
+                     // 오른쪽가는거 left ++
+                    position_x++;
+                    box.style.left=position_x+"px";
+                }else if(direction==2){
+                    // 왼쪽으로가는거 left --
+                    position_x--;
+                    box.style.left=position_x+"px";
+                }else if(direction==3){
+                    // 밑 top ++
+                    position_y++;
+                    box.style.top=position_y+"px";
+                }else if(direction==4){
+                    // 위 top --
+                    position_y--;
+                    box.style.top=position_y+"px";
+                }else if(direction==5){
+                    // 오른쪽위 대각선 left ++ top --
+                    position_x++;
+                    box.style.left=position_x+"px";
+                    position_y--;
+                    box.style.top=position_y+"px";
+                }else if(direction==6){
+                    // 왼쪽위 대각선 left -- top --
+                    position_x--;
+                    box.style.left=position_x+"px";
+                    position_y--;
+                    box.style.top=position_y+"px";
+                }else if(direction==7){
+                    // 오른쪽밑 대각선 left ++ top ++
+                    position_x++;
+                    box.style.left=position_x+"px";
+                    position_y++;
+                    box.style.top=position_y+"px";
+                }else if(direction==8){
+                    // 왼쪽 밑 대각선 left -- top ++
+                    position_x--;
+                    box.style.left=position_x+"px";
+                    position_y++;
+                    box.style.top=position_y+"px";
+                }
+            }else{
+                if(position_x>=150){
+                    position_x--;
+                }
+                if(position_y>=150){
+                    position_y--;
+                }
+                if(position_x<=0){
+                    position_x++;
+                }
+                if(position_y<=0){
+                    position_y++;
+                }
+                console.log(direction);
+                direction = parseInt(Math.random()*8) +1;
+            }
+        }
+        function stop(){
+            moveBtn.disabled=false;
+            clearInterval(time);
+        }
+    </script>
+</body>
+</html>

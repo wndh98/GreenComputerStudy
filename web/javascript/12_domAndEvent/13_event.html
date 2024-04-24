@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="createHappy()">1</button>
+    <ul id="happy">
+
+    </ul>
+    <script>
+        const happyUl=document.querySelector('#happy');
+        let h1=document.createElement('h1');
+        
+        let node = document.createTextNode("create element");
+        
+        h1.append(node);
+        // document.body.append(h1);
+        document.body.prepend(h1);
+        let need=["돈","시간","건강","가족","도파민"];
+        const createHappy=function(){
+            let happyLi;
+            for(let i=0;i<need.length;i++){
+                happyLi=document.createElement("li");
+                happyLi.innerText=need[i];
+                happyUl.append(happyLi);    
+            }
+        }
+    </script>
+</body>
+</html>

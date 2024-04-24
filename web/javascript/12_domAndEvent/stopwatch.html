@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .watch {
+            width: 80%;
+            background-color: antiquewhite;
+            margin: auto;
+            text-align: center;
+            line-height: 5;
+        }
+
+        .btnBox {
+            margin: auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        button {
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .result {
+            margin: auto;
+            width: 80%;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        ol li {
+            width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1 class="watch">00:00:00:000</h1>
+        <div class="btnBox">
+            <button onclick="start()">start</button>
+            <button onclick="stop()">stop</button>
+            <button onclick="record()">record</button>
+            <button onclick="reset()">reset</button>
+        </div>
+        <div class="result">
+            <ol>
+
+            </ol>
+        </div>
+    </div>
+    <script>
+        const watchBox = document.querySelector(".watch");
+        const recordBox = document.querySelector("ol");
+        const button = document.querySelectorAll("button");
+        let hour = 0, min = 0, sec = 0, milli = 0, interval;
+        function start() {
+            button[0].disabled = true;
+            interval = setInterval(function () {
+                milli+=10;
+                if (milli >= 1000){
+                    milli = 0; sec++; 
+                    if (sec >= 60) { 
+                        sec = 0; min++; 
+                        if (min >= 60) { min = 0; hour++; }
+                    }
+                }
+                
+                
+                watchBox.innerHTML = createTime(hour, min, sec, milli);
+            }, 10)
+        }
+        function stop() {
+            button[0].disabled = false;
+            clearInterval(interval);
+        }
+        function record() {
+            const li = document.createElement("li");
+            li.append(createTime(hour, min, sec, milli));
+            recordBox.append(li);
+        }
+        function reset() {
+            button[0].disabled = false;
+            clearInterval(interval);
+            hour = 0;
+            min = 0;
+            sec = 0;
+            milli = 0;
+            watchBox.innerHTML = "00:00:00:000";
+        }
+
+        function createTime(hour, min, sec, milli) {
+            hour = changeTime(hour, 2);
+            min = changeTime(min, 2);
+            sec = changeTime(sec, 2);
+            milli = changeTime(milli, 3);
+            return `${hour}:${min}:${sec}:${milli}`;
+        }
+        function changeTime(num, range) {
+            if (range == 3) {
+                num < 100 ? num < 10 ? num = "00" + num : num = "0" + num : num;
+            } else {
+                num < 10 ? num = "0" + num : num;
+            }
+            return num;
+        }
+    </script>
+</body>
+
+</html>
