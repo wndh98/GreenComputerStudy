@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ans{color:white;}
+    </style>
+</head>
+<body>
+    <h1>오늘의 퀴즈</h1>
+    <button onclick="loadDoc('ajax.json')">퀴즈출제</button>
+    <div id="content">
+        <img src="../../images/Koala.jpg" alt="">
+    </div>
+
+
+    <script>
+        const contentDiv = document.querySelector("#content");
+
+        function loadDoc(url) {
+
+
+            let xhttp = new XMLHttpRequest() //xhr 생성
+
+            xhttp.onreadystatechange = function () {
+                
+                if (this.readyState == 4 && this.status == 200) {
+                    callback(this);
+                }
+            }
+            // xhttp.addEventListener("load", reqListener);
+            // XmlHttpsRequest 객체 설정 (method, url , data)
+            xhttp.open("GET", url);
+            xhttp.send();
+
+        }
+        function callback(data) {
+            let jsonObject=JSON.parse(data.responseText);
+            console.log(jsonObject);
+            let quiz=jsonObject["quiz"];
+            let content="";
+            for(let field in quiz){
+                content+= `<h3>종목 : ${field}</h3>`;
+                for(let q in quiz[field]){
+                    content+= `<p>${q}</p>`;
+                    for(let key in quiz[field][q]){
+                        if(key=="answer"){
+                            content+= `<p class='ans'>${key} : ${quiz[field][q][key]}</p>`;
+                        }else{
+                            content+= `<p>${key} : ${quiz[field][q][key]}</p>`;
+                        }
+                    }
+                }
+            }
+            contentDiv.innerHTML=content;
+            
+        }
+    </script>
+</body>
+</html>

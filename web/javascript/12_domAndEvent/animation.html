@@ -17,15 +17,18 @@
             width: 50px;
             height: 50px;
             background-color: rgb(255, 0, 0);
-        }
 
+        }
+        
         button {
             display: inline-block;
             padding: 10px;
             width: 97px;
             margin-top: 10px;
         }
+        
     </style>
+    
 </head>
 <body>
     <h1>Animation</h1>
@@ -40,7 +43,7 @@
         let moveBtn=document.getElementById("move");
         let stopBtn=document.getElementById("stop");
         let direction;
-        
+        let speed_x=parseInt(Math.random()*4)+1,speed_y=parseInt(Math.random()*4)+1;
         // parseInt(Math.random()*8) +1
 
         // 1~8
@@ -48,7 +51,7 @@
         function move(){
             moveBtn.disabled=true;
             direction = parseInt(Math.random()*8) +1;
-            time=setInterval(randomMove,1);
+            time=setInterval(randomMove,10);
         }
 
         function randomMove(){
@@ -59,60 +62,62 @@
             if(position_x<150 && position_y < 150 && position_x>0 && position_y>0){
                 if(direction==1){
                      // 오른쪽가는거 left ++
-                    position_x++;
+                    position_x+=speed_x;
                     box.style.left=position_x+"px";
                 }else if(direction==2){
                     // 왼쪽으로가는거 left --
-                    position_x--;
+                    position_x-=speed_x;
                     box.style.left=position_x+"px";
                 }else if(direction==3){
                     // 밑 top ++
-                    position_y++;
+                    position_y+=speed_y;
                     box.style.top=position_y+"px";
                 }else if(direction==4){
                     // 위 top --
-                    position_y--;
+                    position_y-=speed_x;
                     box.style.top=position_y+"px";
                 }else if(direction==5){
                     // 오른쪽위 대각선 left ++ top --
-                    position_x++;
+                    position_x+=speed_x;
                     box.style.left=position_x+"px";
-                    position_y--;
+                    position_y-=speed_y;
                     box.style.top=position_y+"px";
                 }else if(direction==6){
                     // 왼쪽위 대각선 left -- top --
-                    position_x--;
+                    position_x-=speed_x;
                     box.style.left=position_x+"px";
-                    position_y--;
+                    position_y-=speed_y;
                     box.style.top=position_y+"px";
                 }else if(direction==7){
                     // 오른쪽밑 대각선 left ++ top ++
-                    position_x++;
+                    position_x+=speed_x;
                     box.style.left=position_x+"px";
-                    position_y++;
+                    position_y+=speed_y;
                     box.style.top=position_y+"px";
                 }else if(direction==8){
                     // 왼쪽 밑 대각선 left -- top ++
-                    position_x--;
+                    position_x-=speed_x;
                     box.style.left=position_x+"px";
-                    position_y++;
+                    position_y+=speed_y;
                     box.style.top=position_y+"px";
                 }
             }else{
                 if(position_x>=150){
-                    position_x--;
+                    position_x=149;
                 }
                 if(position_y>=150){
-                    position_y--;
+                    position_y=149;
                 }
                 if(position_x<=0){
-                    position_x++;
+                    position_x=1;
                 }
                 if(position_y<=0){
-                    position_y++;
+                    position_y=1;
                 }
                 console.log(direction);
                 direction = parseInt(Math.random()*8) +1;
+                speed_x=parseInt(Math.random()*4)+1
+                speed_y=parseInt(Math.random()*4)+1;
             }
         }
         function stop(){
