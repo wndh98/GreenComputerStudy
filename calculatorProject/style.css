@@ -1,0 +1,34 @@
+*{box-sizing: border-box;margin:0;padding:0;}
+table{
+    width:500px;height:800px;margin:auto;margin-top:40px;
+    border:1px solid #fff;
+    box-shadow: 0 0 5px #fff, 0 0 10px blue;
+}
+
+input{width:95%;display:block;margin:auto;border:none;font-size:20px;text-align:right}
+input:focus {outline:none;}
+td{text-align:center;}
+.inputDiv{
+    display:flex;width:80%;height:50px;margin:auto;
+    border:1px solid #fff;
+    box-shadow: 0 0 5px #fff, 0 0 10px violet;
+}
+
+button{
+    width:90px;
+    height:90px;
+    background-color:white;
+    border:1px solid #fff;
+    box-shadow: 0 0 5px #fff, 0 0 10px #ff0080;
+    font-size:20px;
+    
+}
+button:active{
+    background-color:#f9f9f9;
+}
+.zero{width:90%;}
+.equal{height:80%;}
+/* td{border:1px solid black;} */
+/*
+    
+*/

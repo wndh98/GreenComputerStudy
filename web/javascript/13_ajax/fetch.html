@@ -22,9 +22,10 @@
         async function getText() {
             let x = await fetch(file);
             let y = x.text();
-            console.log(y);
+            
             document.getElementById("demo").innerHTML = y;
         }
+        
     </script>
 </body>
 </html>

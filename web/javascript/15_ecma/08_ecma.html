@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="smile.getA()">우하하</button>
+    <button onclick="smile.getB()">ㅋㅋㅋ</button>
+    <button onclick="smile.getC()">ㅎㅎㅎ</button>
+
+    <script>
+        // const wow = function (){
+        //     console.log("wow");
+        // }
+        // wow();
+        // window.onload=function(){
+        //     console.log("wow");
+        // }
+
+        (function () {
+            console.log("wow2");
+        })();
+        ((aa) => console.log(aa))("what!!!");
+
+        const smile = (function () {
+            return {
+                getA: function () {
+                    console.log("A");
+                },
+                getB: function () {
+                    console.log("B");
+                },
+                getC: function () {
+                    console.log("C");
+                }
+            }
+        })();
+
+
+        const Counter = (function counterIIFE() {
+            // 현재 counter 값을 저장하기 위한 변수
+            let current = 0;
+
+            return {
+                getCurrentValue: function () {
+                    return current;
+                },
+
+                increaseValue: function () {
+                    current = current + 1;
+                    return current;
+                },
+
+                decreaseValue: function () {
+                    current = current - 1;
+                    return current;
+                },
+            };
+        })();
+
+        console.log(Counter.getCurrentValue()); // 0
+        console.log(Counter.increaseValue()); // 1
+        console.log(Counter.decreaseValue()); // 0
+    </script>
+</body>
+
+</html>

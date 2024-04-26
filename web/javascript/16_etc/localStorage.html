@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="list" size="10">
+        <option value="name">name</option>
+    </select>
+    <fieldset>
+        <legend>로컬 스토리지 저장소</legend>
+        <p>key : <input type="text" name="" id="key"></p>
+        <p>value : <input type="text" name="" id="value"></p>
+        <input type="button" value="입력" id="add">
+        <input type="button" value="삭제" id="remove">
+    </fieldset>
+    <script>
+        const listSelect = document.getElementById("list");
+        const keyInput = document.getElementById("key");
+        const valueInput = document.getElementById("value");
+        window.onload = function(){
+            let add = document.getElementById("add");
+            let remove = document.getElementById("remove");
+            add.addEventListener("click", addData);
+            remove.addEventListener("click", removeData);
+            init();
+        }
+        function init(){
+            listSelect.innerHTML="";
+            // console.log(localStorage);
+            for(let i = 0 ; i<localStorage.length;i++){
+                let key=localStorage.key(i);
+                localStorage.getItem(key);
+                listSelect.options[listSelect.options.length]=new Option(`key : ${key}, value ${localStorage[key]}`,key);
+                
+            }
+        }
+        const addData = function(){
+            let key=keyInput.value;
+            let value=valueInput.value;
+            // 둘다 똑같은 기능
+            localStorage[key]=value;
+            // localStorage.setItem(key,value);
+            
+            // json 형식의 데이터를 담을시에는 string 형식으로 바꿔서 넣어야함
+            // localStorage["game"]={"name" : "tom" , "age" : 33};
+            
+            init();
+            keyInput.value="";
+            valueInput.value="";
+        }
+        const removeData = function(){
+
+            if(listSelect.selectedIndex<0)return;
+            console.log(listSelect);
+            let selected = listSelect.options[list.selectedIndex].value;
+            console.log(selected);
+            localStorage.removeItem(selected);
+            
+            
+            init();
+      
+            
+        }
+        //  미니게임 슈팅 | 미니게임 확률 | 미니게임 퍼즐
+         
+    </script>
+</body>
+</html>

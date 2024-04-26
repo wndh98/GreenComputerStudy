@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrap">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <div class="inputDiv">
+                        <input type="text" name="result" id="result" oninput="checkInput();" onsearch="calculator(this);">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><button class="opBtn AC" onclick="resetBtn();">AC</button></td>
+                <td><button class="opBtn" onclick="opClick('%');">%</button></td>
+                <td><button class="opBtn" onclick="opClick('*');">X</button></td>
+                <td><button class="opBtn" onclick="opClick('/');">÷</button></td>
+
+            </tr>
+            <tr>
+                <td><button class="numberBtn" onclick="numberClick(7);">7</button></td>
+                <td><button class="numberBtn" onclick="numberClick(8);">8</button></td>
+                <td><button class="numberBtn" onclick="numberClick(9);">9</button></td>
+                <td><button class="opBtn" onclick="opClick('-');">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="numberBtn" onclick="numberClick(4);">4</button></td>
+                <td><button class="numberBtn" onclick="numberClick(5);">5</button></td>
+                <td><button class="numberBtn" onclick="numberClick(6);">6</button></td>
+                <td><button class="opBtn" onclick="opClick('+');">+</button></td>
+                
+                
+            </tr>
+            <tr>
+                <td><button class="numberBtn" onclick="numberClick(1);">1</button></td>
+                <td><button class="numberBtn" onclick="numberClick(2);">2</button></td>
+                <td><button class="numberBtn" onclick="numberClick(3);">3</button></td>
+                
+                <td rowspan="2"><button class="opBtn equal" onclick="calculator();">=</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="numberBtn zero" onclick="numberClick(0);">0</button></td>
+                <td><button class="numberBtn" onclick="numberClick('.');" style="font-size:30px;">.</button></td>
+                
+            </tr>
+        </table>
+    </div>
+    <script src="./calculator.js"></script>
+</body>
+</html>
