@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>What Is JQuery?</h1>
+    <p>자바스크립트 라이브러리</p>
+    <p>자바스크립트 프로그래밍을 아주 간단하게 만들어준다</p>
+    <p>배우기 쉽다</p>
+    <h3>jquery 다운로드</h3>
+    <p>(<a href='http://jquery.com/download/' target="_blank">jQuery.com</a>)에서 라이브러리 다운로드</p>
+    <p>구글 등의 사이트에서 CDN을 받아서 문서에 포함</p>
+
+
+    <div id="start" onclick="change()">1</div>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    <script>
+        $("#start").click(()=>{
+            $("#start").text("Hello World");
+        });
+        function change(){
+            //document.getElementById("start").innerHTML="Hello World";
+        }
+        //$("#start").text("Hello World");
+        
+    </script>
+
+</body>
+</html>

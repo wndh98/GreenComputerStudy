@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>append, prepend, appendTo, prependTo, before, after</h1>
+    <button id="append_prepend">append_prepend</button>
+    <button id="before_after">before_after</button>
+    <button id="appendTo">appendTo</button>
+    <p id="jq">jQuery is <b>fun</b>!!!</p>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $("#append_prepend").click(function(){
+                $("#jq").prepend("<h1>prepend</h1>"); // jq태그 안쪽의 앞에붙음
+                $("#jq").append("<h1>append</h1>"); //jq태그 안쪽의 뒤에 붙음
+            });
+            $("#before_after").click(function(){
+                $("#jq").before("<h1>before</h1>"); //jq태그 바깥의  앞에붙음
+                $("#jq").after("<h1>after</h1>"); //jq태그 바깥의  뒤에붙음
+            });
+            $("#appendTo").click(function(){
+                //.appendTo() : $(A).appendTo(B) // A 가 B 사이의 마지막에 추가 된다.
+                $("<h1>appendTo</h1>").appendTo("#jq"); //아이디가 jq인것 바로 뒤에 붙음
+                $("<h1>appendTo</h1>").appendTo("#jq"); //아이디가 jq인것 바로 뒤에 붙음
+                $("#jq").appendTo("#append_prepend"); //아이디가 jq인것 바로 뒤에 붙음
+                
+
+            });
+            $('h1').click(function(){
+                var btn = $('<button>').text($('#jq').text());
+                $('#appendTo').after(btn);
+            });
+        });
+        /* 
+            
+
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>내가 좋아하는 과일 </h1>
+    <img src="/web/images/0.jpg" alt="사과" title="apple">
+
+    <hr>
+    <button id="lemon">lemon</button>
+    <button id="kiwi">kiwi</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            const img = $('img');
+            $('#lemon').click(function(){
+                // 첫번째 방법 각각 따로 attr
+                // $("img").attr("src","/web/images/3.jpg");
+                // $("img").attr("alt","레몬");
+                // $("img").attr("title","lemon");
+                // 두번째 방법 연속으로 .attr
+                // $("img")
+                // .attr("title","lemon")
+                // .attr("alt","레몬")
+                // .attr("src","/web/images/3.jpg");
+                // 세번째 json 을 넣어서 한번에 변경
+                img
+                .attr({"title":"lemon","src":"/web/images/3.jpg","alt":"레몬"});
+            });
+            $('#kiwi').click(function(){
+                img.attr("src","/web/images/2.jpg");
+                img.attr("alt","키위");
+                img.attr("title","kiwi");
+            });
+            img.mouseenter(function(){
+                $(this).attr({"src":"/web/images/7.jpg","title":"수박"});
+            })
+            .mouseleave(function(){
+                $(this).attr({"src":"/web/images/8.jpg","title":"멜론"});
+            });
+        });
+    </script>
+</body>
+</html>

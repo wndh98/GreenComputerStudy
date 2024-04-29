@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>No Conflict(기호 충돌 방지)</h1>
+    <p>다른 framework이 $ 기호를 사용할 경우 발행할 수 있는 충돌을 피하기 위한 메소드: jQuery를 $로 호출하지 않겠다는 의미</p>
+    <p><span id="devote">증오는 </span>사랑입니다.</p>
+    <p><span id="concern">증오는 </span>사랑입니다.</p>
+    <p><span id="hate">증오는 </span>사랑입니다.</p>
+    <button id="arrow">큐피드의 화살</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        // $.noConflict();
+        let jq = $.noConflict();
+        /*         $(function(){
+                    $('#arrow').click(function(){
+                        $('#devote').text("헌신은 ");
+                    });
+        
+        
+                }); */
+        jq(function () {
+            jq('#arrow').click(function () {
+                jq('#devote').text("헌신은 ");
+            });
+        });
+        jq(function () {
+            jq('#arrow').click(function () {
+                jq('#concern').text("관심은 ");
+            });
+        });
+        // jq(function () {
+        //     jq('#arrow').click(function () {
+        //         jq('#hate').text("미움은 ");
+        //     });
+        // });
+
+        jq(function ($) {
+            $(function () {
+                $('#arrow').click(function () {
+                    $('#hate').text("미움은 ");
+                });
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>jquery syntax</h1>
+    <p>$(selector).action()</p>
+    <p>$: jQuery 선언</p>
+    <p>selector: HTML element 선택자</p>
+    <p>action(): 선택된 element에 대해 수행될 기능</p>
+    <button id="p_erase">p tag 지우개 </button>
+    <button id="p_recall">p tag 살리기 </button>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    <script>
+        // document.getElementById("p_erase").addEventListener("click",()=>{
+        //     let ptags = document.getElementsByTagName("p");
+        //     // for(let i in ptags){
+        //     //     ptags[i].style.display="none";
+        //     // }
+
+        //     Array.prototype.forEach.call(ptags,(element) => {
+        //         element.style.display="none";
+        //     })
+        // })
+        // document.getElementById("p_recall").addEventListener("click",()=>{
+        //     let ptags = document.getElementsByTagName("p");
+        //     for(let i in ptags){
+        //         ptags[i].style.display="block";
+        //     }
+        // })
+        $(document).ready(function(){
+            $('#p_erase').click(()=>{
+                $('p').hide();
+            });
+            $('#p_recall').click(()=>{
+                $('p').show();
+            });
+        });
+        /*
+            
+        */
+    </script>
+</body>
+</html>
