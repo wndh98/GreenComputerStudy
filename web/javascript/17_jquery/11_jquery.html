@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight0 {
+            background-color: red;
+        }
+
+        .highlight1 {
+            background-color: orange;
+        }
+
+        .highlight2 {
+            background-color: yellow;
+        }
+
+        .highlight3 {
+            background-color: green;
+        }
+
+        .highlight4 {
+            background-color: blue;
+        }
+
+        .highlight5 {
+            background-color: navy;
+        }
+
+        .highlight6 {
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>addClass -each</p>
+    <button id="color">무지개색</button>
+    <h1>Monday</h1>
+    <h1>Tuesday</h1>
+    <h1>Wednesday</h1>
+    <h1>Thursday</h1>
+    <h1>Friday</h1>
+    <h1>Saturday</h1>
+    <h1>Sunday</h1>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        // $(function () {
+        //     $('#color').click(function () {
+        //         $('h1').each(function (idx, item) {
+        //             //$(item).addClass("highlight" + idx);
+
+        //             item.classList="highlight" + idx;
+        //         });
+        //     });
+
+        // });
+        window.onload=function(){
+            document.getElementById("color").addEventListener("click",function(){
+                const h1Tag=document.getElementsByTagName("h1");
+                for(let i=0;i<h1Tag.length;i++){
+                    h1Tag[i].classList="highlight" + i;
+                }
+            })
+        }
+        /*
+            아니 그냥 잠 잘못잔듯        
+        */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="descendants" style="width:500px;">
+        div element
+        <p class="first">p (child)
+            <span>span (grandchild)</span>
+        </p>
+        <p class="second">p (child)
+            <span>span (grandchild)</span>
+        </p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('div').children().css({
+                "color":"red",
+                "border":"1px solid black"
+            });
+            $('div').children("p.first").css("background","yellow");
+            //find : 자손(자식, 손자...) 중에서 선택된 element 전부 반환
+            $('div').find('span').css("background","skyblue");
+            $('div').find('span').first().css("background","teal");
+            $('div').find('span').last().css("background","brown");
+            // $('div').find('*').css("background","tomato");
+            
+        });
+    </script>
+</body>
+</html>

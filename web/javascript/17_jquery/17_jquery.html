@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+           border-collapse: collapse;
+           border-spacing: 0;
+           width: 100%;
+           border: 1px solid #ddd;
+       }
+
+       th,
+       td {
+           text-align: left;
+           padding: 8px;
+       }
+
+       tr:nth-child(even) {
+           background-color: #f2f2f2
+       }
+   </style>
+  
+</head>
+<body>
+    
+    <button id="eve">짝수줄</button>
+    <button id="odd">홀수줄</button>
+    <button id="sfi">첫끝줄</button>
+    <table id="tab">
+       <tr>
+            <td>see you</td>
+        </tr>
+        <tr>
+            <td>love you</td>
+        </tr>
+        <tr>
+            <td>do not love you</td>
+        </tr>
+        <tr>
+            <td>love you</td>
+        </tr>
+        <tr>
+            <td>do not love you</td>
+        </tr>
+        <tr>
+            <td>kill you</td>
+        </tr>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#eve').click(function(){
+                $('#tab tr:even').css("background","pink");
+            });
+            $('#odd').click(function(){
+                $('#tab tr:odd').css("background","skyblue");
+            });
+            $('#sfi').click(function(){
+                //방법1
+                // $('#tab tr:first-child, tr:last-child').css("background","orange");
+                //방법2
+                $("#tab tr").first().css("background","orange");
+                $("#tab tr").last().css("background","orange");
+            });
+            //$('tr:nth-child(3n)').css('background','gold')
+            // $('tr').eq(3).css('background','gold')
+            
+        });
+    </script>
+</body>
+</html>
