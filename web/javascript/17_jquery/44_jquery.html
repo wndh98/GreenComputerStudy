@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>jquery ajax done</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            let jq = $.ajax("test.txt")
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function (error) {
+                    console.log(error);
+                }).always(function () {
+                    console.log(1);
+                });
+                jq.always(function(){
+                    console.log(2);
+                });
+                
+        });
+        /*
+        
+        */
+    </script>
+</body>
+
+</html>

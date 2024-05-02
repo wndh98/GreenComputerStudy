@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>event on, off</h1>
+
+    <button>can you click me?</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+            // $('button').on('mouseover click',function(e){
+            $('button').on('wheel click',function(e){
+                console.log(e.type);
+                alert(e.type);
+            });
+
+            const password = "1234";
+            let input = prompt();
+            if(password===input){
+                $('button').off("click");
+            }
+        });
+        /* 
+            
+        */
+    </script>
+</body>
+</html>

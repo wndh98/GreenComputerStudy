@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    <div id="five"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        
+        $(function () {
+            $('div').each(function () {
+                console.log($(this).attr('id'));
+            });
+            const num_arr = [33, 77];
+            $.each(num_arr, function (i, c) {
+                console.log(i);
+                console.log(c);
+            });
+            const arr = ["one", "two", "three", "four", "five"];
+            $.each(arr, function (i, val) {
+                $('#' + val).text(val);
+                return !(val=="three");
+            });
+
+            var obj = { one: "red", two: "orange", three: "yellow", four: "green", five: "blue" };
+            $.each(obj,function(k,v){
+                $('#'+k).append(document.createTextNode(v))
+                .css("background",v);
+            });
+        });
+    </script>
+</body>
+
+</html>

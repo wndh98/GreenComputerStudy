@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            display:none;
+        }
+    </style>    
+</head>
+
+<body>
+    <form>
+        <input id="focus" type="text"><span>Nice to meet you!</span>
+        <br>
+        <input type="text"><span>Nice to meet you!</span>
+
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('input').focus(function () {
+                $(this).css("background", "skyblue")
+                .next().css("display","inline-block");
+            }).blur(function () {
+                $(this).css("background", "")
+                .next()
+                .fadeOut(500);
+                // .css("display","none");
+            });
+        })
+
+        /*
+            
+        */
+    </script>
+</body>
+
+</html>

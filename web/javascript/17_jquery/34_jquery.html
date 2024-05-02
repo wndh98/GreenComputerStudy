@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Todo List</h1>
+    <input type="text" placeholder="New Item">
+    <button id="add">할 일 추가</button>
+    <ol id="myList"></ol>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        $(function () {
+            let input = $("input");
+            $("#add").on("click", function () {
+                let txt = input.val();
+                if (txt != "") {
+                    let el = $("<li>").text(txt).append('<button class="remove">X</button>');
+                    $("#myList").append(el);
+                    input.val("");
+                    
+                }
+            });
+            
+            $("#myList").on("click",".remove",function(){
+                $(this).parent().remove();
+            });
+        });
+        /*
+            영광이네요
+            나도 학원와서 떠드는게 낙임
+
+        */
+
+    </script>
+
+
+</body>
+
+</html>

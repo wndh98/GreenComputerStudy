@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <div id="txt">목표</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $("#btn").click(function(){
+            $.get({
+                url : "test.json",
+                dataType : "json",
+                success : function(result){
+                    //성공했을때 실행
+                    console.log(result);
+                    let str="";
+                    for(let i in result){
+                        str += `${i} : ${result[i]}<br>`; 
+                    }
+                    printHtml(str);
+                },
+                error : function(request, status, error){
+                    //실패했을때 실행
+                    console.log(error);
+                },
+                complete : function(){
+                    //실패 성공 상관없이 모두실행
+                    console.log("complete");
+                }
+            
+            })
+        });
+
+        const printHtml=(result)=>{
+            $("#txt").html(result);
+        }
+    });
+
+    </script>
+</body>
+</html>
